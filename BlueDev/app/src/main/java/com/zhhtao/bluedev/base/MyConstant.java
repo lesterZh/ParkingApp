@@ -26,9 +26,11 @@ public class MyConstant {
     public static final String REGIST_USER_KEY_TIMES = "park_times";
 
 
-    public static final String SERVER_IP = "haitao.uicp.io";
-    public static final int PORT = 23712;
-//    public static final int PORT = 20005;
+
+    //    public static final String SERVER_IP = "haitao.uicp.io";
+    public static final String SERVER_IP = "15bm326540.51mypc.cn";
+    //    public static final int PORT = 23712;
+    public static final int PORT = 20005;
 
 
 

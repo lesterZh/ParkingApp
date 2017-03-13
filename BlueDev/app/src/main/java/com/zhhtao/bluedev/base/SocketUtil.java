@@ -1,7 +1,13 @@
 package com.zhhtao.bluedev.base;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.os.SystemClock;
+import android.support.v7.app.NotificationCompat;
 
+import com.zhhtao.bluedev.R;
 import com.zhhtao.bluedev.utils.LogUtil;
 
 import java.io.IOException;
@@ -9,7 +15,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.Socket;
-import java.net.SocketTimeoutException;
+import java.util.Arrays;
+
+import static android.content.Context.NOTIFICATION_SERVICE;
 
 /**
  * Created by ZhangHaiTao on 2017/1/6.
@@ -56,13 +64,16 @@ public class SocketUtil {
                                     // System.out.println(echo);
 
                                     if (loopReadFlag) {
-                                        readString(mSocket);
+//                                        readString(mSocket);
+                                        readFeedbackBytes(mSocket);
                                     }
 
-                                    sleep(300);
-                                } catch (SocketTimeoutException e) {
-                                    LogUtil.e("Time out, No response");
-                                } catch (Exception e) {
+                                    sleep(1000);
+                                }
+//                                    catch (SocketTimeoutException e) {
+//                                    LogUtil.e("Time out, No response");
+//                                }
+                                    catch (Exception e) {
                                     e.printStackTrace();
                                 }
                             }
@@ -134,6 +145,33 @@ public class SocketUtil {
         return res;
     }
 
+    /**
+     * 读取反馈的信息
+     * @return
+     */
+    public byte[] readFeedbackBytes(Socket client)  throws IOException {
+
+        InputStream inputStream = client.getInputStream();
+        int len = inputStream.available();
+
+        if (len != 0) {
+            byte[] buffer = new byte[len];
+            inputStream.read(buffer);
+            String msg = new String(buffer);
+
+            if (msg.equals("welcome")) {//连接服务器成功
+                //UIUtils.showToast(MyApplication.getAppContext(), "服务器连接成功");
+            }
+//            LogUtil.w("socket rec:");
+            LogUtil.w("socket rec: "+ Arrays.toString(buffer));
+            if (buffer[len-1] == 0x53) {//车辆离开
+                notifyLeave();
+            }
+
+            return buffer;
+        }
+        return null;
+    }
 
     public String readString(Socket client) throws IOException {
         InputStream inputStream = client.getInputStream();
@@ -168,5 +206,22 @@ public class SocketUtil {
     public boolean isOpen() {
         if (mSocket == null) return false;
         return mSocket.isConnected();
+    }
+
+    public void notifyLeave() {
+        Context context = MyApplication.getAppContext();
+        NotificationManager manager = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+        Notification notification = builder
+                .setContentTitle("停车提醒")
+                .setContentText("您的车辆已经离开，请注意安全")
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setLargeIcon(BitmapFactory.decodeResource(
+                        context.getResources(), R.mipmap.ic_launcher))
+//                .setContentIntent(getDefalutIntent(Notification.FLAG_AUTO_CANCEL))
+                .setDefaults(Notification.DEFAULT_VIBRATE|Notification.DEFAULT_SOUND|Notification.DEFAULT_LIGHTS)
+                .build();
+        manager.notify(1, notification);
     }
 }
