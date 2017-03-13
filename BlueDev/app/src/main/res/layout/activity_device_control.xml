@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#3186c9"
+        >
+        <ImageView
+            android:id="@+id/iv_signal" 
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/signal"
+            android:layout_centerVertical="true"/>
+        
+         <TextView
+            android:id="@+id/tv_signal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_signal"
+            android:layout_centerVertical="true"
+            android:text="66"
+            android:textColor="#FFF"
+            android:textSize="14sp" />
+         
+        <TextView 
+	        android:id="@+id/tv_state"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:background="#3186c9"
+	        android:text="当前状态：未连接"
+	        android:textColor="#dfff"
+	        android:textSize="16dp"/>
+    </RelativeLayout>
+    
+     <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView 
+            android:id="@+id/tv_left_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#800"
+            android:text="剩余服务时长：00"/>
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/bt_connect_discon"
+        android:layout_margin="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_blue_rect_solid_btn_selector"
+        
+        android:text="连接设备"
+        android:textColor="#FFF"
+        android:textSize="18sp" />
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+        <LinearLayout 
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp">
+            <ImageView 
+                android:id="@+id/iv_led"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ledon"/>
+            <Button
+                android:id="@+id/bt_led"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_yellow_btn_selector"
+                android:text="LED"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_width="0dp">
+            
+            <ImageView 
+                android:id="@+id/iv_beep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/beep_on"/>
+             <Button
+                android:id="@+id/bt_beep"
+		        android:layout_margin="5dp"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/bg_yellow_btn_selector"
+		        android:text="蜂鸣器"
+		        android:textColor="#FFF"
+		        android:textSize="18sp" />
+            
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1">
+             <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="湿度"
+                android:textSize="18sp"
+                android:textColor="#D45339"
+                android:layout_marginBottom="10dp"/>
+            <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/temperature"/>
+            <TextView 
+                android:id="@+id/tv_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28.3℃"
+                android:textColor="#D45339"
+                android:textSize="45sp"/>
+            
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="湿度"
+                android:textSize="18sp"
+                android:textColor="#282CA1"
+                android:layout_marginBottom="10dp"/>
+            <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/water2"/>
+            <TextView 
+                android:id="@+id/tv_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="68%"
+                android:textColor="#282CA1"
+                android:textSize="45sp"/>
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+   
+</LinearLayout>

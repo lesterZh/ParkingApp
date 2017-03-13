@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.zhhtao.bluedev"
+        minSdkVersion 18
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        //ADD THIS LINE:
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    //ADD THESE LINES:
+    packagingOptions {
+//        exclude 'LICENSE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.github.orhanobut:logger:1.12'
+
+    //leancloud
+    compile 'com.android.support:support-v4:23.0.3'
+    // LeanCloud 基础包
+    compile 'cn.leancloud.android:avoscloud-sdk:v3.+'
+
+    compile files('libs/BmobPay_v2.4_160125.jar')
+
+}

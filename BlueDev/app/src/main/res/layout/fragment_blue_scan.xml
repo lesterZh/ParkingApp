@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/systemBule"
+        android:gravity="center"
+        android:text="可用蓝牙设备"
+        android:textColor="#fff"
+        android:textSize="18dp"/>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/ll_blue_scan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+        <RelativeLayout
+            android:id="@+id/rl_scanning"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_no_device"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/iv_no_find"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/cry1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_no_find"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="主人，找不到蓝牙设备……"
+                android:textColor="#f00"
+                android:textSize="20dp"/>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+    <Button
+        style="@style/ButtonBlueSolidStyle"
+        android:background="@drawable/bg_blue_rect_solid_btn_selector"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:id="@+id/btn_scan_ble"
+        android:text="开始搜索"
+        />
+
+
+</LinearLayout>

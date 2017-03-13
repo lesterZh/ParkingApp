@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:gravity="center_vertical"
+              android:layout_height="wrap_content"
+              android:paddingLeft="15dp"
+              android:paddingBottom="15dp"
+              android:paddingTop="15dp"
+              android:paddingRight="5dp"
+              android:background="@color/white"
+    >
+
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/debug_image_girl"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_park_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="交大停车场1"
+                android:textSize="16sp"
+                android:textColor="@color/systemBule"/>
+            <TextView
+                android:id="@+id/tv_use_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/TextColorLightGray"
+                android:text="总共:100 可用:32"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="center"
+                android:src="@drawable/icon_arrow_selector"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_adress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/TextColorLightGray"
+            android:text="地址：成都犀浦西南交通大学"/>
+        <TextView
+            android:id="@+id/tv_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/TextColorLightGray"
+            android:text="028-8777777"/>
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/red"
+            android:text="每小时 15 元"/>
+    </LinearLayout>
+</LinearLayout>

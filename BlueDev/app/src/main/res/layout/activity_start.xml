@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_start"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/linearLayout2">
+
+        <Button
+            android:layout_width="134dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_blue_solid_button"
+            android:textColor="#ffffff"
+            android:textSize="17sp"
+
+            android:text="注册"
+            android:id="@+id/btn_regist"
+            />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="0dp"/>
+
+        <Button
+            android:layout_width="134dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_blue_solid_button"
+            android:textColor="#ffffff"
+            android:textSize="17sp"
+
+            android:text="登录"
+            android:id="@+id/btn_login"
+            />
+    </LinearLayout>
+
+    <Button
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test_btn1"
+        android:id="@+id/test_btn1"
+        android:layout_marginTop="57dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:visibility="gone"
+        android:text="test_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/test_btn1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/test_btn2"/>
+
+
+</RelativeLayout>

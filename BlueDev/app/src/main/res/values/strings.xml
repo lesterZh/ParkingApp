@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">盖亚zht</string>
+
+    <string name="head">这里是HeadView</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="loading">正在加载...</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--盖亚诊所模块-->
+    <string-array name="clinic_bottomstitle">
+        <item>家庭医生</item>
+        <item>身边盖亚</item>
+        <item>积分好礼</item>
+        <item>家庭医生</item>
+        <item>身边盖亚</item>
+        <item>积分好礼</item>
+    </string-array>
+    <string-array name="health_record_wine_type">
+        <item>红酒</item>
+        <item>白酒</item>
+        <item>啤酒</item>
+        <item>香槟</item>
+        <item>白兰地</item>
+        <item>葡萄酒</item>
+    </string-array>
+    <string-array name="health_plan_sport_feel">
+        <item>吃力</item>
+        <item>适中</item>
+        <item>轻松</item>
+    </string-array>
+    <string-array name="clinic_bottomscontent">
+        <item>你的健康管家为您提供个性化的医疗保健及全面的健康服务，足不出户就能为您解决日常健康问题。</item>
+        <item>您身边的贴身管家，提供服务和咨询，为您和您的家人健康保驾护航。</item>
+        <item>积分多多，好礼多多，赶快来兑换吧！</item>
+        <item>你的健康管家为您提供个性化的医疗保健及全面的健康服务，足不出户就能为您解决日常健康问题。</item>
+        <item>您身边的贴身管家，提供服务和咨询，为您和您的家人健康保驾护航。</item>
+        <item>积分多多，好礼多多，赶快来兑换吧！</item>
+    </string-array>
+    <string name="title_activity_inflate_views">InflateViewsActivity</string>
+</resources>

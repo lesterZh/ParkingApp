@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/systemBule"
+        android:gravity="center"
+        android:text="停车记录"
+        android:textColor="#fff"
+        android:textSize="18dp"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_head"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/darkerGray"
+        android:gravity="center_vertical"
+        android:text="正在使用中"
+        android:textColor="#fff"
+        android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_no_car"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:text="当前暂无停车记录"/>
+
+    <include layout="@layout/layout_current_use" />
+    <TextView
+        android:layout_marginTop="0dp"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/darkerGray"
+        android:gravity="center_vertical"
+        android:text="历史记录"
+        android:textColor="#fff"
+        android:textSize="16dp"/>
+
+    <com.zhhtao.bluedev.ui.CustomListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_park">
+
+    </com.zhhtao.bluedev.ui.CustomListView>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

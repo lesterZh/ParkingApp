@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--张海涛-->
+    <color name="systemBule">#3d82e5</color>
+    <color name="darkBule">#3d5fe3</color>
+    <color name="systemOrange">#FF7E00</color>
+    <color name="systemBackground">#EEEFF4</color>
+
+    <color name="systemCyan">#05C0AD</color>
+    <color name="divideColorWhite">#5793E9</color>
+    <color name="divideColorGray">#F0EFF4</color>
+
+    <color name="TextColorLightGray">#666666</color>
+    <color name="TextColorDarkGray">#333333</color>
+    <color name="TextColorWhite">#fff</color>
+
+    <color name="white">#ffffff</color>
+    <color name="snowWhite">#F6F6F6</color>
+    <color name="transparent">#0000</color>
+    <color name="black">#f000</color>
+
+
+    <color name="darkerGray">@android:color/darker_gray</color>
+    <color name="editTextBoundLine">#E1E1E1</color>
+    <color name="TestColor">#ffb</color>
+    <color name="TestColor2">#fbb</color>
+
+    <!--王浩韩-->
+    <color name="red">#F24040</color>
+    <color name="green">#3CB371</color>
+    <color name="blue">#3D82E5</color>
+    <color name="blue_normal">#883D82E5</color>
+    <color name="blue_light">#ff0099cc</color>
+    <color name="orange">#ffff8800</color>
+    <color name="event_background">#E7E7E7</color>
+    <color name="backgound_line">#eeeff4</color>
+    <color name="lightGray">#D1D1D1</color>
+    <color name="lightGrayline">#F6F6F6</color>
+    <color name="background_home">#f1f3f4</color>
+    <color name="movement_index">#FF8400</color>
+    <color name="sleep_index">#AC7FFF</color>
+    <color name="habit__index">#3D82E5</color>
+    <color name="disease_index">#2CB69A</color>
+    <color name="text_index">#666666</color>
+    <color name="icon_function">#333333</color>
+    <color name="text_content">#666666</color>
+    <color name="text_title">#333333</color>
+    <color name="text_hint">#999999</color>
+    <color name="text_clinic_title">#75787d</color>
+
+
+
+    //aiyuantai
+    <color name="child_page_titlecolor">#fa7644</color>
+    <color name="child_page_titletextcolor">#fa7644</color>
+    <color name="backgroundcolor">#FFFAF0</color>
+    <color name="basecolor">#96C431</color>
+    <color name="titlefont">#000</color>
+    <color name="blank">#000000</color>
+    <color name="login_edit_bt_pressed">#8DBB2F</color>
+    <color name="base_of_color">#ffd4d4d4</color>
+    <color name="tv_line">#FFFAF0</color>
+    <color name="orange_yellow">#BED73C</color>
+    <color name="yellow">#FFFF00</color>
+
+    <color name="lvory">#fffff0</color>
+    <color name="search_bg">#fffbfbfb</color>
+    <color name="bg">#f7f7f7</color>
+    <color name="text_bg">#99535353</color>
+    <color name="seek_bar_bg">#80808080</color>
+    <color name="mini_list_bg_color">#ffbababa</color>
+    <color name="mini_page_bg_color">#ffededed</color>
+    <color name="spliter_bg">#ff999999</color>
+
+
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="help_button_view">#ffcccccc</color>
+    <color name="help_view">#ff404040</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_image_border">#ffffffff</color>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="sbc_header_text">#ff808080</color>
+    <color name="sbc_header_view">#ffffffff</color>
+    <color name="sbc_list_item">#fffff0e0</color>
+    <color name="sbc_layout_view">#ffffffff</color>
+    <color name="sbc_page_number_text">#ff000000</color>
+    <color name="sbc_snippet_text">#ff4b4b4b</color>
+    <color name="share_text">#ff000000</color>
+    <color name="share_view">#ffffffff</color>
+    <color name="status_view">#50000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#00000000</color>
+
+
+    <color name="seek_bar_text">#fff6f6f6</color>
+    <color name="black3_text_color">#ff333333</color>
+    <color name="black6_text_color">#ff666666</color>
+    <color name="black8_text_color">#ff888888</color>
+    <color name="custom_dialog_spliter_color">#ffd5d5d5</color>
+    <color name="msp_dialog_tiltle_blue">#ff2277bb</color>
+    <color name="msp_text_color_gray">#ff333333</color>
+    <color name="msp_hint_color">#ffb2b2b2</color>
+    <color name="msp_line_color">#ffcccccc</color>
+    <color name="msp_combox_list_devider_color">#ffd8d8d8</color>
+    <color name="mini_text_color_gray">#ff333333</color>
+    <color name="mini_hint_color">#ffb2b2b2</color>
+    <color name="mini_error_hint_color">#ffffffff</color>
+    <color name="mini_error_input">#ffff0000</color>
+    <color name="mini_text_shadow">#fffefefe</color>
+    <color name="mini_text_white">#ffffffff</color>
+    <color name="mini_text_black">#ff000000</color>
+    <color name="mini_button_text_disable">#ffaaaaaa</color>
+    <color name="mini_button_text_normal">#ffffffff</color>
+    <color name="mini_text_link">#ff2861d7</color>
+
+    <color name="mini_input_hint_color">#ffcccccc</color>
+    <color name="mini_win_background">#00000000</color>
+    <color name="mini_card_defaultuse">#ffff9933</color>
+    <color name="mini_color_gray">#ffffff</color>
+    <color name="mini_color_light_gray">#ff999999</color>
+    <color name="mini_cardlimit_text_color">#ff000000</color>
+    <color name="mini_cardlimit_money_color">#ff666666</color>
+    <color name="mini_card_edti_bk">#ff31373e</color>
+    <color name="mini_card_edit_pop_shadow">#59000000</color>
+    <color name="setting_translucent_bg">#e0000000</color>
+
+
+    <color name="btn_selected">#ffcccccc</color>
+    <!-- 图片分割间隙夜色 -->
+    <color name="spliter">#e0e0e0ff</color>
+
+    <!-- 滚动显示器的颜色 -->
+    <color name="Indicator_bg">#76c81f</color>
+    <color name="Indicators_select">#ff900d</color>
+
+    <color name="index_bg">#f7f7f7</color>
+    <color name="index_header_bg">#f9f9f9</color>
+
+    <color name="list_side">#ffd5d5d5</color>
+    <color name="list_select">#fff5f5f5</color>
+    <color name="list_normal">#ffffffff</color>
+    <color name="cart_num_edit_gray">#ffabafb7</color>
+    <color name="pink_color">#fffff8ee</color>
+    <color name="red_text_color">#ffb40101</color>
+    <color name="popu_line_color">#C7C7C7</color>
+    <color name="orange_text_color">#ffef600b</color>
+    <color name="green_text_color">#ff7fb200</color>
+    <color name="navigate_bar_selected_text">#ff7fb200</color>
+    <color name="navigate_bar_noselected_text">#ff888888</color>
+    <color name="cards_amount">#fffffc00</color>
+
+    <color name="product_filter_child_normal">#ffe0e0e0</color>
+    <color name="product_filter_child_selected">#ffd0d0d0</color>
+
+</resources>

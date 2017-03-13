@@ -1,0 +1,19 @@
+hello word
+你好，世界
+//从assets 文件夹中获取文件并读取数据  
+    public String getFromAssets(String fileName){  
+        String result = "";  
+            try {  
+                InputStream in = getResources().getAssets().open(fileName);  
+                //获取文件的字节数  
+                int lenght = in.available();  
+                //创建byte数组  
+                byte[]  buffer = new byte[lenght];  
+                //将文件中的数据读到byte数组中  
+                in.read(buffer);  
+                result = EncodingUtils.getString(buffer, ENCODING);  
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            }  
+            return result;  
+    } 

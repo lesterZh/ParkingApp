@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:background="@color/systemBackground"
+			  android:orientation="vertical">
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="45dp"
+		android:background="@color/systemBule"
+		android:gravity="center"
+		android:text="用户中心"
+		android:textColor="#fff"
+		android:textSize="18dp"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/systemBule"
+		android:orientation="vertical">
+
+
+
+		<LinearLayout
+			android:layout_marginBottom="20dp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="30dp"
+				android:layout_marginRight="25dp"
+				android:src="@drawable/man" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="ID:"
+						android:textColor="#fff"
+						android:textSize="16sp" />
+
+					<TextView
+						android:id="@+id/tv_user_id"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dp"
+						android:text="17729849371"
+						android:textSize="14sp"
+						android:textColor="#fff" />
+				</LinearLayout>
+
+
+			</LinearLayout>
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@color/divideColorWhite" />
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical">
+
+			<LinearLayout
+				android:id="@+id/ll_balance_entry"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center_horizontal"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/tv_current_money"
+					android:layout_marginTop="13sp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="128"
+					android:textColor="#fff"
+					android:textSize="21sp" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="12dp"
+					android:layout_marginBottom="15sp"
+					android:text="余额"
+					android:textColor="#fff"
+					android:textSize="14sp" />
+			</LinearLayout>
+
+			<View
+				android:layout_width="1dp"
+				android:layout_height="60dp"
+				android:background="@color/divideColorWhite" />
+
+			<LinearLayout
+				android:id="@+id/ll_favorable_ticket"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center_horizontal"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/tv_park_times"
+					android:layout_marginTop="13sp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="12"
+					android:textColor="#fff"
+					android:textSize="21sp" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="12dp"
+					android:layout_marginBottom="15sp"
+					android:text="停车次数"
+					android:textColor="#fff"
+					android:textSize="14sp" />
+			</LinearLayout>
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_marginTop="15dp"
+		android:id="@+id/ll_change_password"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/list_bg_normal"
+		android:orientation="vertical"
+		android:paddingBottom="0.5dip"
+		android:paddingTop="0.5dip" >
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10.0dip"
+			android:layout_marginLeft="10.0dip"
+			android:layout_marginTop="10.0dip" >
+
+			<ImageView
+				android:id="@+id/mycoupon_icon3"
+				android:layout_width="25.0dip"
+				android:layout_height="25.0dip"
+				android:layout_alignParentLeft="true"
+				android:src="@drawable/icon_password" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="10.0dip"
+				android:layout_marginRight="10.0dip"
+				android:layout_toRightOf="@id/mycoupon_icon3"
+				android:ellipsize="end"
+				android:singleLine="true"
+				android:text="修改密码"
+				android:textColor="@color/black3_text_color"
+				android:textSize="14.0sp" />
+
+
+
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:layout_alignParentRight="true"
+					android:layout_marginRight="15dp"
+					android:background="@drawable/arrow_right"
+					android:visibility="visible" />
+
+
+
+		</RelativeLayout>
+	</LinearLayout>
+
+	<Button
+		android:layout_gravity="center"
+		android:layout_marginTop="50dp"
+		android:id="@+id/btn_exit"
+		android:layout_width="317dp"
+		android:layout_height="40dp"
+		android:background="@drawable/bg_blue_rect_solid_btn_selector"
+		android:textSize="17sp"
+		android:text="退出账号"
+		android:layout_marginBottom="40dp"
+		android:textColor="#fff"/>
+
+</LinearLayout>
