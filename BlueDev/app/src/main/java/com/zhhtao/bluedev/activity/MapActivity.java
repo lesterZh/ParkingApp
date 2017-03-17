@@ -181,11 +181,11 @@ public class MapActivity extends Activity implements LocationSource, AMapLocatio
                 // 如果不设置标志位，此时再拖动地图时，它会不断将地图移动到当前的位置
                 if (isFirstLoc) {
                     //设置缩放级别
-                    aMap.moveCamera(CameraUpdateFactory.zoomTo(17));
+//                    aMap.moveCamera(CameraUpdateFactory.zoomTo(17));
                     //将地图移动到定位点
                     aMap.moveCamera(CameraUpdateFactory.changeLatLng(new LatLng(amapLocation.getLatitude(), amapLocation.getLongitude())));
                     //点击定位按钮 能够将地图的中心移动到定位点
-                    //                    mListener.onLocationChanged(amapLocation);
+                    mListener.onLocationChanged(amapLocation);
                     //添加图钉
 //                    aMap.addMarker(getMarkerOptions(amapLocation)).showInfoWindow();
                     //获取定位信息

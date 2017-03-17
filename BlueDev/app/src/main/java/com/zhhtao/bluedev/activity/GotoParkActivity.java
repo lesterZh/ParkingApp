@@ -112,7 +112,8 @@ public class GotoParkActivity extends BaseActivity {
     }
 
     private void initView() {
-        mTvTitleTitleBar.setText(mParkInfoBean.getName());
+//        mTvTitleTitleBar.setText(mParkInfoBean.getName());
+        mTvTitleTitleBar.setText("停车位状态查看");//修改标题
         mAdapter = new GotoParkAdapter(mContext, 0, mCarPortList);
         mLvPark.setAdapter(mAdapter);
         mIvRightTitleBar = (ImageView) findViewById(R.id.iv_right_title_bar);
@@ -121,7 +122,7 @@ public class GotoParkActivity extends BaseActivity {
         mIvRightTitleBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIUtils.showToast(mContext, "park");
+                UIUtils.showToast(mContext, "进入停车场布局图");
                 ZhtUtils.gotoIntent(mContext, ParkMapActivity.class);
             }
         });

@@ -29,6 +29,7 @@ public class UserInfoFragment extends BaseFragment implements View.OnClickListen
     private TextView mTvCurrentMoney;
     private TextView mTvParkTimes;
     private LinearLayout mLlChangePassword;
+    private LinearLayout mLlChangeBusId;//修改车牌号
     private Button mBtnExit;
 
     @Nullable
@@ -56,6 +57,7 @@ public class UserInfoFragment extends BaseFragment implements View.OnClickListen
         mTvCurrentMoney = (TextView) rootView.findViewById(R.id.tv_current_money);
         mTvParkTimes = (TextView) rootView.findViewById(R.id.tv_park_times);
         mLlChangePassword = (LinearLayout) rootView.findViewById(R.id.ll_change_password);
+        mLlChangeBusId = (LinearLayout) rootView.findViewById(R.id.ll_change_bus_id);
         mBtnExit = (Button) rootView.findViewById(R.id.btn_exit);
 
         mBtnExit.setOnClickListener(this);
@@ -112,6 +114,31 @@ public class UserInfoFragment extends BaseFragment implements View.OnClickListen
                 });
                 break;
 
+            case R.id.ll_change_bus_id:
+
+                final AlertDialog.Builder cp2 = new AlertDialog.Builder(mContext);
+                View rootView2 = LayoutInflater.from(mContext).inflate(R.layout.dialog_change_bus_id, null, false);
+                ViewHolder viewHolder2 = new ViewHolder(rootView2);
+
+
+                cp2.setView(rootView2);
+                cp2.setCancelable(true);
+                final Dialog dialog2 = cp2.show();
+
+                viewHolder2.mBtnOk.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2.dismiss();
+                    }
+                });
+
+                viewHolder2.mBtnCancle.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2.dismiss();
+                    }
+                });
+                break;
 
         }
     }

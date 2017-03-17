@@ -10,7 +10,7 @@
         android:layout_height="45dp"
         android:background="@color/systemBule"
         android:gravity="center"
-        android:text="停车记录"
+        android:text="停车记录查看"
         android:textColor="#fff"
         android:textSize="18dp"/>
 

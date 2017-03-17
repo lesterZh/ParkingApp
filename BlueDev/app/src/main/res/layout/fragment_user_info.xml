@@ -10,7 +10,7 @@
 		android:layout_height="45dp"
 		android:background="@color/systemBule"
 		android:gravity="center"
-		android:text="用户中心"
+		android:text="用户信息管理"
 		android:textColor="#fff"
 		android:textSize="18dp"/>
 
@@ -61,7 +61,26 @@
 						android:textColor="#fff" />
 				</LinearLayout>
 
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content">
 
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="车牌号:"
+						android:textColor="#fff"
+						android:textSize="16sp" />
+
+					<TextView
+						android:id="@+id/tv_bus_id"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dp"
+						android:text="川A0L65E"
+						android:textSize="14sp"
+						android:textColor="#fff" />
+				</LinearLayout>
 			</LinearLayout>
 		</LinearLayout>
 
@@ -159,7 +178,7 @@
 				android:layout_width="25.0dip"
 				android:layout_height="25.0dip"
 				android:layout_alignParentLeft="true"
-				android:src="@drawable/icon_password" />
+				android:src="@drawable/ic_https_black_36dp" />
 
 			<TextView
 				android:layout_width="wrap_content"
@@ -184,6 +203,59 @@
 					android:layout_marginRight="15dp"
 					android:background="@drawable/arrow_right"
 					android:visibility="visible" />
+
+
+
+		</RelativeLayout>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_marginTop="15dp"
+		android:id="@+id/ll_change_bus_id"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/list_bg_normal"
+		android:orientation="vertical"
+		android:paddingBottom="0.5dip"
+		android:paddingTop="0.5dip" >
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10.0dip"
+			android:layout_marginLeft="10.0dip"
+			android:layout_marginTop="10.0dip" >
+
+			<ImageView
+				android:id="@+id/bus_icon3"
+				android:layout_width="25.0dip"
+				android:layout_height="25.0dip"
+				android:layout_alignParentLeft="true"
+				android:src="@drawable/ic_credit_card_black_36dp" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="10.0dip"
+				android:layout_marginRight="10.0dip"
+				android:layout_toRightOf="@id/bus_icon3"
+				android:ellipsize="end"
+				android:singleLine="true"
+				android:text="设定车牌号"
+				android:textColor="@color/black3_text_color"
+				android:textSize="14.0sp" />
+
+
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="15dp"
+				android:background="@drawable/arrow_right"
+				android:visibility="visible" />
 
 
 

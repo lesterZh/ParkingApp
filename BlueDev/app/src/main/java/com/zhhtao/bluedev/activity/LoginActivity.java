@@ -123,7 +123,8 @@ public class LoginActivity extends BaseActivity {
                                 public void run() {
                                     SystemClock.sleep(1000);
                                     while (!SocketUtil.getInstance().isOpen()) {//等待socket连接成功
-                                        SystemClock.sleep(100);
+                                        SystemClock.sleep(300);
+//                                        SocketUtil.getInstance().openSocket();
                                     }
 
                                     ZhtCustomProgressDialog.dismiss2();

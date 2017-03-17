@@ -12,7 +12,7 @@
     android:layout_height="45dp"
     android:background="@color/systemBule"
     android:gravity="center"
-    android:text="费用结算"
+    android:text="停车费用结算"
     android:textColor="#fff"
     android:textSize="18dp"/>
 
