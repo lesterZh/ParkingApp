@@ -1,4 +1,4 @@
-package com.zht.map;
+package com.zhhtao.bluedev.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.core.SuggestionCity;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
+import com.zhhtao.bluedev.R;
+import com.zht.map.ToastUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -67,7 +70,7 @@ public class MapActivity extends Activity implements LocationSource, AMapLocatio
 
     private TextView mTvLocation;//显示当前位置
     private EditText mEtLength;//设置搜索半径
-
+    private ImageView mIvBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -78,6 +81,15 @@ public class MapActivity extends Activity implements LocationSource, AMapLocatio
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setDisplayHomeAsUpEnabled(true);
         setTitle("附近停车场");
+
+        //返回按钮
+        mIvBack = (ImageView) findViewById(R.id.iv_back);
+        mIvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         //显示地图
         mapView = (MapView) findViewById(R.id.map);

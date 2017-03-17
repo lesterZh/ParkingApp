@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.zhhtao.bluedev"
         minSdkVersion 18
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
 
@@ -40,4 +40,5 @@ dependencies {
     // LeanCloud 基础包
     compile 'cn.leancloud.android:avoscloud-sdk:v3.+'
     compile project(':paylib')
+    compile project(':maplib')
 }

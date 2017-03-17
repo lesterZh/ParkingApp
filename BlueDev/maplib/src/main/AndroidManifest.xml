@@ -45,9 +45,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:node="replace" >
-        <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="23bb354bd88e578b5b22d4f7a94c7516"/>
+
 
         <!--<activity android:name=".StartActivity"
             android:theme="@style/AppThemeBar">
@@ -58,7 +56,7 @@
             </intent-filter>
         </activity>-->
 
-        <service android:name="com.amap.api.location.APSService"/>
+
 
         <activity android:name=".MapActivity">
         </activity>

@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.zhhtao.bluedev.R;
 import com.zhhtao.bluedev.activity.GotoParkActivity;
-import com.zhhtao.bluedev.activity.ParkMapActivity;
 import com.zhhtao.bluedev.bean.ParkInfoBean;
 import com.zhhtao.bluedev.utils.UIUtils;
 import com.zhhtao.bluedev.utils.ZhtUtils;
@@ -126,7 +125,7 @@ public class ParkListFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 UIUtils.showToast(mContext, "进入地图查看模式");
-                ZhtUtils.gotoIntent(mContext, ParkMapActivity.class);
+                ZhtUtils.gotoIntent(mContext, com.zhhtao.bluedev.activity.MapActivity.class);
             }
         });
     }
