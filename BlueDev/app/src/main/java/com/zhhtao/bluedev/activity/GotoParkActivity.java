@@ -26,6 +26,7 @@ import com.zhhtao.bluedev.ui.ZhtCustomProgressDialog;
 import com.zhhtao.bluedev.utils.LogUtil;
 import com.zhhtao.bluedev.utils.StreamUtils;
 import com.zhhtao.bluedev.utils.UIUtils;
+import com.zhhtao.bluedev.utils.ZhtUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -121,6 +122,7 @@ public class GotoParkActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 UIUtils.showToast(mContext, "park");
+                ZhtUtils.gotoIntent(mContext, ParkMapActivity.class);
             }
         });
     }

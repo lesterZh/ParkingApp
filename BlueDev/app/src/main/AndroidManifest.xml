@@ -66,6 +66,9 @@
         </activity>
         <activity android:name=".activity.BombPayActivity">
         </activity>
+        <activity android:name=".activity.ParkMapActivity"
+            android:theme="@style/AppTheme_ActionBar">
+        </activity>
     </application>
 
 </manifest>
