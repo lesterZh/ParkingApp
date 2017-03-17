@@ -43,10 +43,10 @@
     </LinearLayout>
 
     <Button
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="test_btn1"
+        android:text="socket test"
         android:id="@+id/test_btn1"
         android:layout_marginTop="57dp"
         android:layout_alignParentTop="true"
@@ -54,7 +54,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:visibility="gone"
+        android:visibility="visible"
         android:text="test_btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

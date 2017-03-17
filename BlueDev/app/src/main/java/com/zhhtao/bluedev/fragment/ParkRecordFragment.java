@@ -22,6 +22,7 @@ import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.SaveCallback;
 import com.zhhtao.bluedev.R;
+import com.zhhtao.bluedev.activity.BombPayActivity;
 import com.zhhtao.bluedev.base.BaseFragment;
 import com.zhhtao.bluedev.base.MyConstant;
 import com.zhhtao.bluedev.base.SocketUtil;
@@ -33,6 +34,7 @@ import com.zhhtao.bluedev.utils.LogUtil;
 import com.zhhtao.bluedev.utils.SharedPreferencesUtil;
 import com.zhhtao.bluedev.utils.StreamUtils;
 import com.zhhtao.bluedev.utils.UIUtils;
+import com.zhhtao.bluedev.utils.ZhtUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -226,6 +228,8 @@ public class ParkRecordFragment extends BaseFragment implements View.OnClickList
                                     ZhtCustomProgressDialog.dismiss2();
                                 }
                             },3000);
+
+                            ZhtUtils.gotoIntent(mContext, BombPayActivity.class);
                         }
                     }).setNegativeButton("取消", null);
 

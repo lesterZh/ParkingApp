@@ -7,7 +7,6 @@ import android.widget.Button;
 import com.orhanobut.logger.Logger;
 import com.zhhtao.bluedev.R;
 import com.zhhtao.bluedev.base.BaseActivity;
-import com.zhhtao.bluedev.base.SocketUtil;
 import com.zhhtao.bluedev.utils.LogUtil;
 import com.zhhtao.bluedev.utils.SharedPreferencesUtil;
 import com.zhhtao.bluedev.utils.ZhtUtils;
@@ -49,12 +48,14 @@ public class StartActivity extends BaseActivity implements View.OnClickListener 
                 break;
 
             case R.id.test_btn1:
-                byte[] cmd = {0x55,0x51,0x2d,0x00,0x01,0x51};
-                SocketUtil.getInstance().sendData(cmd);
+//                byte[] cmd = {0x55,0x51,0x2d,0x00,0x01,0x51};
+//                SocketUtil.getInstance().sendData(cmd);
+                ZhtUtils.gotoIntent(mContext, SocketTestActivity.class);
                 break;
             case R.id.test_btn2:
-                byte[] cmd2 = {0x55,0x51,0x2d,0x00,0x01,0x52};
-                SocketUtil.getInstance().sendData(cmd2);
+//                byte[] cmd2 = {0x55,0x51,0x2d,0x00,0x01,0x52};
+//                SocketUtil.getInstance().sendData(cmd2);
+                ZhtUtils.gotoIntent(mContext, com.zhhtao.bluedev.activity.BombPayActivity.class);
                 break;
         }
     }

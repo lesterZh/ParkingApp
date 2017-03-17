@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="cn.bmob.wappay_v3_demo_as"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application tools:node="replace">
+        <activity android:name=".BombPayActivity"/>
+        <activity android:name="cn.bmob.pay.v3.act.PayAct"/>
+    </application>
+
+</manifest>

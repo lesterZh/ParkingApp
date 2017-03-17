@@ -193,10 +193,10 @@ public class DeviceControl extends Activity{
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
-						Intent intent = new Intent(context, PayActivity.class);
-						intent.putExtra("device", device);
-						startActivity(intent);
-						finish();
+//						Intent intent = new Intent(context, PayActivity.class);
+//						intent.putExtra("device", device);
+//						startActivity(intent);
+//						finish();
 					}
 					
 				});

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -50,14 +51,16 @@ public class GotoParkActivity extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case  REFRESH_STATE :
+                case REFRESH_STATE:
                     mAdapter.notifyDataSetChanged();
-                break;
+                    break;
             }
         }
     };
 
     byte[] rec_cmd;
+    private ImageView mIvRightTitleBar;
+
     public static void start(Context context, ParkInfoBean bean) {
         Intent intent = new Intent(context, GotoParkActivity.class);
         intent.putExtra("park", bean);
@@ -91,11 +94,11 @@ public class GotoParkActivity extends BaseActivity {
             public void run() {
                 rec_cmd = SocketUtil.getInstance().readBytes();
                 LogUtil.w(Arrays.toString(rec_cmd));
-                for (int i=4; i<14; i++) {
+                for (int i = 4; i < 14; i++) {
                     if (rec_cmd[i] == 1) {
-                        mCarPortList.get(i-4).setState("不可用");
+                        mCarPortList.get(i - 4).setState("不可用");
                     } else {
-                        mCarPortList.get(i-4).setState("可用");
+                        mCarPortList.get(i - 4).setState("可用");
                     }
                 }
 
@@ -111,6 +114,15 @@ public class GotoParkActivity extends BaseActivity {
         mTvTitleTitleBar.setText(mParkInfoBean.getName());
         mAdapter = new GotoParkAdapter(mContext, 0, mCarPortList);
         mLvPark.setAdapter(mAdapter);
+        mIvRightTitleBar = (ImageView) findViewById(R.id.iv_right_title_bar);
+        mIvRightTitleBar.setImageResource(R.drawable.park_map);
+        mIvRightTitleBar.setVisibility(View.VISIBLE);
+        mIvRightTitleBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIUtils.showToast(mContext, "park");
+            }
+        });
     }
 
     private void initData() {
@@ -126,8 +138,8 @@ public class GotoParkActivity extends BaseActivity {
     public void onClick() {
     }
 
-    byte[] send_cmd = {0x55,0x51,0x2d,0x00,0x01,0x52};
-    byte[] query_cmd = {0x55,0x51,0x2d,0x54};
+    byte[] send_cmd = {0x55, 0x51, 0x2d, 0x00, 0x01, 0x52};
+    byte[] query_cmd = {0x55, 0x51, 0x2d, 0x54};
 
     class GotoParkAdapter extends ArrayAdapter<CarPortInfoBean> {
 
@@ -171,8 +183,8 @@ public class GotoParkActivity extends BaseActivity {
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            UIUtils.showToast(mContext,"正在为您开启 " + bean.getName());
-                            send_cmd[4] = (byte) (position+1);
+                            UIUtils.showToast(mContext, "正在为您开启 " + bean.getName());
+                            send_cmd[4] = (byte) (position + 1);
                             bean.setState("不可用");
                             mAdapter.notifyDataSetChanged();
                             SocketUtil.getInstance().sendData(send_cmd);
@@ -181,7 +193,7 @@ public class GotoParkActivity extends BaseActivity {
                             //保存本地记录
                             CurrentParkBean curPark = new CurrentParkBean();
                             curPark.setParkName(mParkInfoBean.getName());
-                            curPark.setCarPort("停车位"+(position+1));
+                            curPark.setCarPort("停车位" + (position + 1));
 
                             curPark.setStartTime(System.currentTimeMillis());
                             StreamUtils.objectToFile(curPark, "CurrentParkBean", mContext);

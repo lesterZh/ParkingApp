@@ -27,7 +27,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhhtao.bluedev.R;
-import com.zhhtao.bluedev.activity.PayActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -107,11 +106,11 @@ public class SearchBleFragment extends Fragment {
                                     long arg3) {
                 BluetoothDevice device = mLeDeviceListAdapter.getDevice(arg2);
 //				Intent intent = new Intent(context, DeviceControl.class);
-                Intent intent = new Intent(context, PayActivity.class);
-                intent.putExtra("deviceName", device.getName());
-                intent.putExtra("deviceAddress", device.getAddress());
-                intent.putExtra("device", device);
-                startActivity(intent);
+//                Intent intent = new Intent(context, PayActivity.class);
+//                intent.putExtra("deviceName", device.getName());
+//                intent.putExtra("deviceAddress", device.getAddress());
+//                intent.putExtra("device", device);
+//                startActivity(intent);
                 if (mScanning == true) {
                     scanLeDevice(false);
                 }
