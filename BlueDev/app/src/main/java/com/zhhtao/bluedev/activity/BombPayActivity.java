@@ -320,7 +320,7 @@ public class BombPayActivity extends BaseActivity implements View.OnClickListene
 
     // 默认为0.02
     double getPrice() {
-        double price = 0.02;
+        double price = 15;
 
         return price;
     }

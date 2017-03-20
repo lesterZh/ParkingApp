@@ -74,7 +74,7 @@ public class LoginActivity extends BaseActivity {
                     UIUtils.showToast(mContext, "请输入密码");
                     UIUtils.shake(etPassword, 2, 300);
                 } else {
-                    ZhtCustomProgressDialog.show(mContext, "登录中……",false, null);
+                    ZhtCustomProgressDialog.show(mContext, "登录中……",true, null);
                     isPhonePasswordValid();
                 }
             }

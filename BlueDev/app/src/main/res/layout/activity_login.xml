@@ -48,15 +48,17 @@
 
             android:text="注册新用账户"/>
         <View
+            android:visibility="gone"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:background="@android:color/darker_gray"/>
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_forget_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="忘记密码?"/>
+            android:text="修改密码"/>
     </LinearLayout>
 </LinearLayout>
