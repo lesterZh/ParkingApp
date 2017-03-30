@@ -16,6 +16,7 @@ public class MyConstant {
 
     public static long CUR_MONEY = 1528; //用户当前余额
     public static long PARK_TIMES = 13; //用户当前停车次数
+    public static String isUseNow = "isUseNow"; //是否正在使用停车位
 
 
     //user 的属性

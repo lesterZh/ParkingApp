@@ -118,7 +118,7 @@
             android:layout_height="29dp"
             android:layout_marginRight="15dp"
             android:background="@drawable/bg_orange_rect_solid_btn"
-            android:text="我要离开"
+            android:text="费用支付"
             android:textColor="@color/white" />
     </LinearLayout>
 

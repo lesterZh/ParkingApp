@@ -170,11 +170,11 @@ public class HomeActivityNew extends BaseActivity {
                 }
                 selectedFragment = payFragment;
                 break;
-            case 2:
-                if (parkRecordFragment == null) {
+            case 2://每次新建一个Fragment
+                //if (parkRecordFragment == null) {
                     parkRecordFragment = new ParkRecordFragment();
                     addFragment(parkRecordFragment);
-                }
+                //}
                 selectedFragment = parkRecordFragment;
                 break;
             case 3:

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +19,15 @@ import android.widget.TextView;
 
 import com.zhhtao.bluedev.R;
 import com.zhhtao.bluedev.base.BaseActivity;
+import com.zhhtao.bluedev.base.MyApplication;
+import com.zhhtao.bluedev.base.MyConstant;
 import com.zhhtao.bluedev.base.SocketUtil;
 import com.zhhtao.bluedev.bean.CarPortInfoBean;
 import com.zhhtao.bluedev.bean.CurrentParkBean;
 import com.zhhtao.bluedev.bean.ParkInfoBean;
 import com.zhhtao.bluedev.ui.ZhtCustomProgressDialog;
 import com.zhhtao.bluedev.utils.LogUtil;
+import com.zhhtao.bluedev.utils.SharedPreferencesUtil;
 import com.zhhtao.bluedev.utils.StreamUtils;
 import com.zhhtao.bluedev.utils.UIUtils;
 import com.zhhtao.bluedev.utils.ZhtUtils;
@@ -95,11 +99,27 @@ public class GotoParkActivity extends BaseActivity {
             public void run() {
                 rec_cmd = SocketUtil.getInstance().readBytes();
                 LogUtil.w(Arrays.toString(rec_cmd));
-                for (int i = 4; i < 14; i++) {
+                for (int i = 4; i < rec_cmd.length; i++) {
                     if (rec_cmd[i] == 1) {
                         mCarPortList.get(i - 4).setState("不可用");
                     } else {
                         mCarPortList.get(i - 4).setState("可用");
+                    }
+                }
+
+                mHandler.sendEmptyMessage(REFRESH_STATE);
+                ZhtCustomProgressDialog.dismiss2();
+            }
+        }).start();
+
+        //如果读取状态阻塞时间过长，则调用该函数
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(5000);
+                if (rec_cmd == null) {
+                    for (int i = 0; i < 10; i++) {
+                        mCarPortList.get(i).setState("可用");
                     }
                 }
 
@@ -154,6 +174,8 @@ public class GotoParkActivity extends BaseActivity {
         TextView mTvPrice;
         @Bind(R.id.btn_park_in)
         Button mBtnParkIn;
+        @Bind(R.id.btn_park_order)
+        Button mBtnParkOrder;
 
         public GotoParkAdapter(Context context, int resource, List<CarPortInfoBean> objects) {
             super(context, resource, objects);
@@ -173,6 +195,8 @@ public class GotoParkActivity extends BaseActivity {
             mTvState.setText(bean.getState());
             if (bean.getState().equals("不可用")) {
                 mTvState.setBackgroundResource(R.drawable.bg_red_text);
+            } else  if (bean.getState().equals("已预约")){
+                mTvState.setBackgroundResource(R.drawable.bg_green_text);
             } else {
                 mTvState.setBackgroundResource(R.drawable.bg_blue_text);
             }
@@ -181,7 +205,7 @@ public class GotoParkActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                    builder.setTitle("提示");
+                    builder.setTitle("使用停车位提示");
                     builder.setMessage("您确定要在 " + bean.getName() + " 停车吗？");
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
@@ -200,6 +224,47 @@ public class GotoParkActivity extends BaseActivity {
 
                             curPark.setStartTime(System.currentTimeMillis());
                             StreamUtils.objectToFile(curPark, "CurrentParkBean", mContext);
+
+                            //记录使用标志  收到离开提醒后清除标志
+                            SharedPreferencesUtil.putBoolean(MyApplication.getAppContext(),MyConstant.isUseNow, true);
+//                            SharedPreferencesUtil.getBoolean(mContext, MyConstant.isUseNow, true);
+                        }
+                    });
+
+                    builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+
+                    builder.setCancelable(false);
+                    builder.show();
+                }
+            });
+
+            mBtnParkOrder.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                    builder.setTitle("预约停车位提示");
+                    builder.setMessage("您确定要预约 " + bean.getName() + " 吗？");
+                    builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            UIUtils.showToast(mContext, "预约成功 " + bean.getName());
+                            send_cmd[4] = (byte) (position + 1);
+                            bean.setState("已预约");
+                            mAdapter.notifyDataSetChanged();
+//                            SocketUtil.getInstance().sendData(send_cmd);
+
+
+                            //保存本地记录
+//                            CurrentParkBean curPark = new CurrentParkBean();
+//                            curPark.setParkName(mParkInfoBean.getName());
+//                            curPark.setCarPort("停车位" + (position + 1));
+
+//                            curPark.setStartTime(System.currentTimeMillis());
+//                            StreamUtils.objectToFile(curPark, "CurrentParkBean", mContext);
                         }
                     });
 

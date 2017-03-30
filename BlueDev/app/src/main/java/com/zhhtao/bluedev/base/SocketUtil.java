@@ -2,13 +2,17 @@ package com.zhhtao.bluedev.base;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.SystemClock;
 import android.support.v7.app.NotificationCompat;
 
 import com.zhhtao.bluedev.R;
+import com.zhhtao.bluedev.activity.HomeActivityNew;
 import com.zhhtao.bluedev.utils.LogUtil;
+import com.zhhtao.bluedev.utils.SharedPreferencesUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -212,16 +216,23 @@ public class SocketUtil {
         Context context = MyApplication.getAppContext();
         NotificationManager manager = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+
+        PendingIntent contentIntent = PendingIntent.getActivity(
+                MyApplication.getAppContext(), 0, new Intent(MyApplication.getAppContext(), HomeActivityNew.class), 0);
+
         Notification notification = builder
                 .setContentTitle("停车提醒")
-                .setContentText("您的车辆已经离开，请注意安全")
+                .setContentText("您的车辆已经离开，请注意安全，支付本次停车费用！")
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapFactory.decodeResource(
                         context.getResources(), R.mipmap.ic_launcher))
 //                .setContentIntent(getDefalutIntent(Notification.FLAG_AUTO_CANCEL))
                 .setDefaults(Notification.DEFAULT_VIBRATE|Notification.DEFAULT_SOUND|Notification.DEFAULT_LIGHTS)
+                .setContentIntent(contentIntent)
                 .build();
         manager.notify(1, notification);
+
+        SharedPreferencesUtil.putBoolean(MyApplication.getAppContext(),MyConstant.isUseNow, false);
     }
 }

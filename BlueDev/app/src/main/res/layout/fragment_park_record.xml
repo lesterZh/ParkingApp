@@ -52,7 +52,7 @@
         android:layout_height="35dp"
         android:background="@color/darkerGray"
         android:gravity="center_vertical"
-        android:text="历史记录"
+        android:text="历史停车记录"
         android:textColor="#fff"
         android:textSize="16dp"/>
 

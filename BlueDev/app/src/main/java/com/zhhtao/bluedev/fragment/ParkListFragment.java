@@ -63,7 +63,7 @@ public class ParkListFragment extends Fragment {
 //            mParkInfoList.add(bean);
 //        }
         ParkInfoBean bean = new ParkInfoBean();
-        bean.setName("西南交大" + "停车场");
+        bean.setName("自助停车场A");
         bean.setAddress("地址：成都安靖镇西南交通大学犀浦校区");
         bean.setContact("028-8768934");
         bean.setPrice("每小时15元");
@@ -72,7 +72,7 @@ public class ParkListFragment extends Fragment {
         mParkInfoList.add(bean);
 
         ParkInfoBean bean2 = new ParkInfoBean();
-        bean2.setName("交大体育馆" + "停车场");
+        bean2.setName("自助停车场B");
         bean2.setAddress("地址：成都犀浦西南交通大学体育馆");
         bean2.setContact("028-8768935");
         bean2.setPrice("每小时10元");
@@ -81,7 +81,7 @@ public class ParkListFragment extends Fragment {
         mParkInfoList.add(bean2);
 
         ParkInfoBean bean3 = new ParkInfoBean();
-        bean3.setName("锦园三期停车场");
+        bean3.setName("自助停车场C");
         bean3.setAddress("地址：四川省成都市郫县校园路381号");
         bean3.setContact("028-8768378");
         bean3.setPrice("每小时18元");
@@ -90,7 +90,7 @@ public class ParkListFragment extends Fragment {
         mParkInfoList.add(bean3);
 
         ParkInfoBean bean4 = new ParkInfoBean();
-        bean4.setName("西郡兰庭-停车场");
+        bean4.setName("自助停车场D");
         bean4.setAddress("地址：四川省成都市郫县锦宁巷11");
         bean4.setContact("028-8762451");
         bean4.setPrice("每小时10元");
@@ -99,7 +99,7 @@ public class ParkListFragment extends Fragment {
         mParkInfoList.add(bean4);
 
         ParkInfoBean bean5 = new ParkInfoBean();
-        bean5.setName("浦园酒店-停车场");
+        bean5.setName("自助停车场F");
         bean5.setAddress("地址：四川省成都市郫县林湾村");
         bean5.setContact("028-8769783");
         bean5.setPrice("每小时14元");

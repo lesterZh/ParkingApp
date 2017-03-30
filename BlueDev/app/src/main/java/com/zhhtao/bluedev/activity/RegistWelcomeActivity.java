@@ -221,7 +221,13 @@ public class RegistWelcomeActivity extends BaseActivity {
                     UIUtils.showToast(context, "注册成功");
                     //跳转到登录界面
                     //                    mCustomProgressDialog.dismiss();
-                    ZhtUtils.gotoIntent(context, LoginActivity.class);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            ZhtUtils.gotoIntent(context, LoginActivity.class);
+                        }
+                    },3000);
+
                 } else {
                     UIUtils.showToast(context, "请重试");
                 }

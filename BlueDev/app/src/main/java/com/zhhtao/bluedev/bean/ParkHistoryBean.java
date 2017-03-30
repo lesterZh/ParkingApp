@@ -10,10 +10,10 @@ public class ParkHistoryBean implements Serializable {
     String parkName; //停车场
     String CarPort; //停车位
     int real_price; //实际花费
-    long startTime;
-    long endTime;
-    String durationTime;
-    String userId;
+    long startTime;//开始时间
+    long endTime;//结束时间
+    String durationTime;//实际停车时间
+    String userId;//用户ID
 
     public String getUserId() {
         return userId;

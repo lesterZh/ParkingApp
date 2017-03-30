@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg_start"
+                android:background="@drawable/start"
     >
 
 
@@ -12,7 +12,7 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="60dp"
         android:id="@+id/linearLayout2">
 
         <Button
@@ -43,7 +43,7 @@
     </LinearLayout>
 
     <Button
-        android:visibility="visible"
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="socket test"
@@ -54,7 +54,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:visibility="visible"
+        android:visibility="invisible"
         android:text="test_btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,4 +63,13 @@
         android:id="@+id/test_btn2"/>
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自助停车客户端 V1.0"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"/>
 </RelativeLayout>

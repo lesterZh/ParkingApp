@@ -24,6 +24,7 @@ import com.avos.avoscloud.SaveCallback;
 import com.zhhtao.bluedev.R;
 import com.zhhtao.bluedev.activity.BombPayActivity;
 import com.zhhtao.bluedev.base.BaseFragment;
+import com.zhhtao.bluedev.base.MyApplication;
 import com.zhhtao.bluedev.base.MyConstant;
 import com.zhhtao.bluedev.base.SocketUtil;
 import com.zhhtao.bluedev.bean.CurrentParkBean;
@@ -160,7 +161,8 @@ public class ParkRecordFragment extends BaseFragment implements View.OnClickList
             LogUtil.w("m:" + btTime);
             int hour = (int) (btTime / 60);
             int min = (int) (btTime % 60);
-            if (min == 0) min = 1;
+//            if (min == 0) min = 1;
+            min++;
             final String durationTime = String.format("%d小时 %d分钟", hour, min);
 
             mTvUseTime.setText("已停时长：" + hour + "小时" + min + "分钟");
@@ -173,9 +175,24 @@ public class ParkRecordFragment extends BaseFragment implements View.OnClickList
             mBtnLeave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    boolean isUse = SharedPreferencesUtil.getBoolean(MyApplication.getAppContext(),
+                            MyConstant.isUseNow, false);
+                    //还没离开停车位，不可用支付费用
+                    if (isUse) {
+                        //已经离开停车位，可以支付费用了
+                        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                        builder.setTitle("停车费支付提示");
+                        builder.setMessage("请您先离开停车位，再支付本次停车费用");
+                        builder.setPositiveButton("确定", null);
+                        builder.setCancelable(true);
+                        builder.show();
+                        return;
+                    }
+
+                    //已经离开停车位，可以支付费用了
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                    builder.setTitle("提示");
-                    builder.setMessage("您即将离开，本次停车费用为 " + cp + "元");
+                    builder.setTitle("停车费支付提示");
+                    builder.setMessage("您本次的停车费用为 " + cp + "元");
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -316,8 +333,8 @@ public class ParkRecordFragment extends BaseFragment implements View.OnClickList
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                    builder.setTitle("提示");
-                    builder.setMessage("确定要删除吗？");
+                    builder.setTitle("删除提示");
+                    builder.setMessage("确定要删除本条停车记录吗？");
 
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
