@@ -94,8 +94,10 @@ public class LoginActivity extends BaseActivity {
             }
         });
 
-        etPhone.setText("17729849371");
-        etPassword.setText("123456");
+        if (MyConstant.changeUser == false) {
+            etPhone.setText("17729849371");
+            etPassword.setText("123456");
+        }
     }
 
     /**
@@ -129,6 +131,7 @@ public class LoginActivity extends BaseActivity {
 
                                     ZhtCustomProgressDialog.dismiss2();
                                     ZhtUtils.gotoIntent(mContext, HomeActivityNew.class);
+                                    finish();
                                 }
                             });
 

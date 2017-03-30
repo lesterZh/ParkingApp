@@ -58,6 +58,7 @@ public class StartActivity extends BaseActivity implements View.OnClickListener 
                 ZhtUtils.gotoIntent(mContext, com.zhhtao.bluedev.activity.BombPayActivity.class);
                 break;
         }
+        finish();
     }
 
 

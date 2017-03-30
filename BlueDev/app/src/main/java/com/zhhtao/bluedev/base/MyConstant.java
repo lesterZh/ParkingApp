@@ -33,6 +33,6 @@ public class MyConstant {
     //    public static final int PORT = 23712;
     public static final int PORT = 20005;
 
-
+    public static boolean changeUser = false;
 
 }

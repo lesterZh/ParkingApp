@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -242,32 +243,42 @@ public class GotoParkActivity extends BaseActivity {
                 }
             });
 
+            if (bean.getState().equals("已预约")) {
+                mBtnParkOrder.setText("取消预约");
+                mBtnParkOrder.setTextColor(Color.parseColor("#FFFF0000"));
+            } else if (bean.getState().equals("可用")) {
+                mBtnParkOrder.setText("我要预约");
+                mBtnParkOrder.setTextColor(Color.parseColor("#FF228b22"));
+            }
             mBtnParkOrder.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                    builder.setTitle("预约停车位提示");
-                    builder.setMessage("您确定要预约 " + bean.getName() + " 吗？");
-                    builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            UIUtils.showToast(mContext, "预约成功 " + bean.getName());
-                            send_cmd[4] = (byte) (position + 1);
-                            bean.setState("已预约");
-                            mAdapter.notifyDataSetChanged();
-//                            SocketUtil.getInstance().sendData(send_cmd);
-
-
-                            //保存本地记录
-//                            CurrentParkBean curPark = new CurrentParkBean();
-//                            curPark.setParkName(mParkInfoBean.getName());
-//                            curPark.setCarPort("停车位" + (position + 1));
-
-//                            curPark.setStartTime(System.currentTimeMillis());
-//                            StreamUtils.objectToFile(curPark, "CurrentParkBean", mContext);
-                        }
-                    });
-
+                    if (bean.getState().equals("可用")) {
+                        builder.setTitle("预约停车位提示");
+                        builder.setMessage("您确定要预约 " + bean.getName() + " 吗？");
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                UIUtils.showToast(mContext, "预约成功 " + bean.getName());
+                                send_cmd[4] = (byte) (position + 1);
+                                bean.setState("已预约");
+                                mAdapter.notifyDataSetChanged();
+                            }
+                        });
+                    } else if (bean.getState().equals("已预约")) {
+                        builder.setTitle("取消预约停车位提示");
+                        builder.setMessage("您确定要取消 " + bean.getName() + " 的预约吗？");
+                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                UIUtils.showToast(mContext, "取消预约成功 " + bean.getName());
+                                send_cmd[4] = (byte) (position + 1);
+                                bean.setState("可用");
+                                mAdapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
                     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -281,8 +292,10 @@ public class GotoParkActivity extends BaseActivity {
 
             if (bean.getState().equals("不可用")) {
                 mBtnParkIn.setClickable(false);
+                mBtnParkOrder.setClickable(false);
             } else {
                 mBtnParkIn.setClickable(true);
+                mBtnParkOrder.setClickable(true);
             }
 
             return convertView;

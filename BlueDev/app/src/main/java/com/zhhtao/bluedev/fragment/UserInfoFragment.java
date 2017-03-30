@@ -14,8 +14,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zhhtao.bluedev.R;
+import com.zhhtao.bluedev.activity.LoginActivity;
 import com.zhhtao.bluedev.base.BaseFragment;
 import com.zhhtao.bluedev.base.MyConstant;
+import com.zhhtao.bluedev.utils.ZhtUtils;
 
 /**
  * Created by ZhangHaiTao on 2017/1/10.
@@ -62,6 +64,7 @@ public class UserInfoFragment extends BaseFragment implements View.OnClickListen
 
         mBtnExit.setOnClickListener(this);
         mLlChangePassword.setOnClickListener(this);
+        mLlChangeBusId.setOnClickListener(this);
     }
 
     private void setView() {
@@ -80,7 +83,9 @@ public class UserInfoFragment extends BaseFragment implements View.OnClickListen
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        MyConstant.changeUser = true;
+                        ZhtUtils.gotoIntent(mContext, LoginActivity.class);
+                        mContext.finish();
                     }
                 }).setNegativeButton("取消", null);
 
