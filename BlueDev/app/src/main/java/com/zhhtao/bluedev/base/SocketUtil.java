@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.SystemClock;
 import android.support.v7.app.NotificationCompat;
+import android.widget.Toast;
 
 import com.zhhtao.bluedev.R;
 import com.zhhtao.bluedev.activity.HomeActivityNew;
@@ -164,7 +165,8 @@ public class SocketUtil {
             String msg = new String(buffer);
 
             if (msg.equals("welcome")) {//连接服务器成功
-                //UIUtils.showToast(MyApplication.getAppContext(), "服务器连接成功");
+//                UIUtils.showToast(MyApplication.getAppContext(), "服务器连接成功");
+                Toast.makeText(MyApplication.getAppContext(), "服务器连接成功", Toast.LENGTH_SHORT).show();
             }
 //            LogUtil.w("socket rec:");
             LogUtil.w("socket rec: "+ Arrays.toString(buffer));
