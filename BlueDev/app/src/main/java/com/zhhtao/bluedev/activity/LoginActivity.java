@@ -117,7 +117,8 @@ public class LoginActivity extends BaseActivity {
 
                         String ps = (list.get(0).getString(MyConstant.REGIST_USER_KEY_PASSWOED));
                         if (ps.equals(password)) {
-                            //
+                            //密码正确，准备进入主界面
+                            //先连接到socket服务器
                             MyConstant.USER_ID = phone;
                             SocketUtil.getInstance().openSocket();
                             new Handler().post(new Runnable() {
